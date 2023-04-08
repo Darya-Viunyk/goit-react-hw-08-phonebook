@@ -1,27 +1,31 @@
 import { Routes, Route } from 'react-router-dom';
-import { fetchContacts } from 'redux/tasks/phoneBook.operations';
-import { useEffect } from 'react';
-import { useDispatch } from 'react-redux';
-import { Layout } from 'components/Layout/Layout';
-import { HomePage } from 'pages/HomePage';
+import { useDispatch, useSelector } from 'react-redux';
+import Navigation from 'components/Navigation/Navigation';
 import PrivateRoute from 'routes/PrivateRoute';
 import PublicRoute from 'routes/PublicRoute';
 import LoginPage from 'pages/LoginPage';
 import RegisterPage from 'pages/RegisterPage';
 import NotFoundPage from 'pages/NotFoundPage';
 import { ContactsPage } from 'components/ContactsPage/ContactsPage';
+import { tokenSelector } from 'redux/tasks/selectors';
+import { token } from 'redux/auth/authContacts.api';
+import { authOperations } from 'redux/auth/auth.operetions';
+import useEffectOne from 'hook/useEffectOne';
 
 export const App = () => {
+  const storeToken = useSelector(tokenSelector);
   const dispatch = useDispatch();
 
-  useEffect(() => {
-    dispatch(fetchContacts());
-  }, [dispatch]);
+  useEffectOne(() => {
+    token.set(storeToken);
+    storeToken && dispatch(authOperations.current());
+  });
 
   return (
-    <Routes>
-      <Route path="/" element={<Layout />}>
-        <Route index element={<HomePage />} />
+    <>
+      <Navigation />
+      <Routes>
+        <Route path="/" element={<h1>Home</h1>} />
         <Route
           path="/contacts"
           element={
@@ -41,7 +45,7 @@ export const App = () => {
           }
         />
         <Route path="*" element={<NotFoundPage />} />
-      </Route>
-    </Routes>
+      </Routes>
+    </>
   );
 };

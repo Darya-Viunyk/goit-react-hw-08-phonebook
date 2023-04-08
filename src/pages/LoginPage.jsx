@@ -1,7 +1,6 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import { authOperations } from 'redux/auth/auth.operetions';
-import { Outlet } from 'react-router-dom';
 
 export default function LoginPage() {
   const dispatch = useDispatch();
@@ -33,7 +32,6 @@ export default function LoginPage() {
         </div>
         <button type="submit">Submit</button>
       </form>
-      <Outlet />
     </>
   );
 }
