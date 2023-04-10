@@ -5,6 +5,7 @@ import styled from '@emotion/styled';
 import * as yup from 'yup';
 import { useDispatch, useSelector } from 'react-redux';
 import { addContact } from 'redux/tasks/phoneBook.operations';
+import { contactsSelector } from 'redux/tasks/selectors';
 
 const Conteiner = styled(Form)`
   display: flex;
@@ -29,9 +30,10 @@ const schema = yup.object().shape({
 
 export const FormContacts = () => {
   const dispatch = useDispatch();
-  const contacts = useSelector(state => state.items);
+  const contacts = useSelector(contactsSelector);
 
-  const getContact = contact => contacts.some(it => it.name === contact.name);
+  const getIsExistContact = contact =>
+    contacts.some(it => it.name === contact.name);
 
   const handleSudmit = event => {
     event.preventDefault();
@@ -41,7 +43,7 @@ export const FormContacts = () => {
       name: form.elements.name.value,
       number: form.elements.number.value,
     };
-    if (getContact(contact)) {
+    if (getIsExistContact(contact)) {
       alert(`${contact.name} is alredy in contacts`);
       return;
     }

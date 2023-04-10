@@ -1,5 +1,5 @@
 import { Contact } from './Contact';
-import { Outlet } from 'react-router-dom';
+
 import { ListStyle } from './contacts.styled';
 import { useSelector } from 'react-redux';
 
@@ -17,7 +17,6 @@ export const Contacts = () => {
           return <Contact key={id} id={id} name={name} number={number} />;
         })}
       </ListStyle>
-      <Outlet />
     </>
   );
 };

@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import { FormContacts } from 'components/FormContacts/FormContacts';
 import { Filter } from 'components/Filter/Filter';
-import { Contacts } from 'pages/Contacts';
+import { Contacts } from 'components/Contacts/Contacts';
 
 import { fetchContacts } from 'redux/tasks/phoneBook.operations';
 import { filtredContactsSelector } from 'redux/tasks/selectors';
