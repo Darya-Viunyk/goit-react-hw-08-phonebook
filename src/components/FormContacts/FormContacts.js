@@ -47,7 +47,6 @@ export const FormContacts = () => {
       alert(`${contact.name} is alredy in contacts`);
       return;
     }
-
     dispatch(addContact(contact));
     form.reset();
   };
