@@ -1,6 +1,6 @@
 import { createPortal } from 'react-dom';
 import { useCallback, useEffect } from 'react';
-
+import { LoginPage } from './LoginPage';
 import { Backdrop, Modall } from './modal.styled';
 
 const modalRoot = document.querySelector('#modal-root');
@@ -30,7 +30,9 @@ function Modal({ onClose }) {
 
   return createPortal(
     <Backdrop onClick={onClikOverlay}>
-      <Modall></Modall>
+      <Modall>
+        <LoginPage />
+      </Modall>
     </Backdrop>,
     modalRoot
   );

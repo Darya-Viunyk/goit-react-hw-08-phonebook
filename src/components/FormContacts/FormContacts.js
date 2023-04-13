@@ -1,28 +1,17 @@
 import { nanoid } from 'nanoid';
-import { Label, NameLabel, Button } from './formcontacts.styled';
-import { Formik, Form, Field } from 'formik';
-import styled from '@emotion/styled';
+import {
+  Label,
+  NameLabel,
+  Button,
+  Conteiner,
+  Inpyt,
+} from './formcontacts.styled';
+import { Formik } from 'formik';
 import * as yup from 'yup';
 import { useDispatch, useSelector } from 'react-redux';
 import { addContact } from 'redux/tasks/phoneBook.operations';
 import { contactsSelector } from 'redux/tasks/selectors';
 
-const Conteiner = styled(Form)`
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  background: #dedada;
-  padding: 10px 10px;
-  border-radius: 5px;
-`;
-const Inpyt = styled(Field)`
-  padding: 10px 10px;
-  width: auto;
-  outline: none;
-  border: 1px solid #bbb;
-  border-radius: 5px;
-  display: block;
-`;
 const schema = yup.object().shape({
   name: yup.string().required(),
   number: yup.number().min(7).max(11).required(),

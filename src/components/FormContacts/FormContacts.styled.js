@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+import { Form, Field } from 'formik';
 
 export const Label = styled.label`
   display: flex;
@@ -19,4 +20,20 @@ export const Button = styled.button`
   background-color: #a4a1a1;
   color: #ffffff;
   border: none;
+`;
+export const Conteiner = styled(Form)`
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  background: #dedada;
+  padding: 10px 10px;
+  border-radius: 5px;
+`;
+export const Inpyt = styled(Field)`
+  padding: 10px 10px;
+  width: auto;
+  outline: none;
+  border: 1px solid #bbb;
+  border-radius: 5px;
+  display: block;
 `;
