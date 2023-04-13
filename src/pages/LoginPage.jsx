@@ -1,6 +1,5 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
-
 import { authOperations } from 'redux/auth/auth.operetions';
 
 function LoginPage() {
