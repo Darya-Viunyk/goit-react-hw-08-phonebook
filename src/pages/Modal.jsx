@@ -1,11 +1,11 @@
 import { createPortal } from 'react-dom';
 import { useCallback, useEffect } from 'react';
-import { LoginPage } from './LoginPage';
+
 import { Backdrop, Modall } from './modal.styled';
 
 const modalRoot = document.querySelector('#modal-root');
 
-function Modal({ onClose }) {
+function Modal({ onClose, children }) {
   const onKeydown = useCallback(
     e => {
       if (e.code === 'Escape') {
@@ -30,9 +30,7 @@ function Modal({ onClose }) {
 
   return createPortal(
     <Backdrop onClick={onClikOverlay}>
-      <Modall>
-        <LoginPage />
-      </Modall>
+      <Modall>{children}</Modall>
     </Backdrop>,
     modalRoot
   );
