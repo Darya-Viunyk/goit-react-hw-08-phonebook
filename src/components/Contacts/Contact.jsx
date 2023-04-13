@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux';
 
 import { deleteContact } from 'redux/tasks/phoneBook.operations';
 
-export const Contact = ({ name, number, id }) => {
+const Contact = ({ name, number, id }) => {
   const dispatch = useDispatch();
 
   return (
@@ -18,3 +18,4 @@ export const Contact = ({ name, number, id }) => {
     </>
   );
 };
+export default Contact;

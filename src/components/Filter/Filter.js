@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { phoneBook } from 'redux/tasks/phoneBook.slice';
 import { contactsFilterSelector } from 'redux/tasks/selectors';
 
-export const Filter = () => {
+function Filter() {
   const dispatch = useDispatch();
   const filter = useSelector(contactsFilterSelector);
 
@@ -27,4 +27,5 @@ export const Filter = () => {
       </FiltrBox>
     </>
   );
-};
+}
+export default Filter;

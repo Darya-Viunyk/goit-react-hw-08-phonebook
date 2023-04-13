@@ -1,18 +1,22 @@
+import { Item, List } from './navigation.staled';
+
 import UserMenu from 'components/UserMenu/UserMenu';
 import React from 'react';
 import { useSelector } from 'react-redux';
-import { NavLink } from 'react-router-dom';
 import { isLoggedInSelector } from 'redux/tasks/selectors';
 
-export default function Navigation() {
+function Navigation() {
   const isLoggedIn = useSelector(isLoggedInSelector);
 
   return (
-    <div>
-      {isLoggedIn && <NavLink to={'/contacts'}>Contacts</NavLink>}
-      {!isLoggedIn && <NavLink to={'/login'}>Login</NavLink>}
-      {!isLoggedIn && <NavLink to={'/register'}>Register</NavLink>}
-      {isLoggedIn && <UserMenu />}
-    </div>
+    <nav>
+      <List>
+        {isLoggedIn && <Item to={'/contacts'}>Contacts</Item>}
+        {!isLoggedIn && <Item to={'/login'}>Login</Item>}
+        {!isLoggedIn && <Item to={'/register'}>Register</Item>}
+        {isLoggedIn && <UserMenu />}
+      </List>
+    </nav>
   );
 }
+export default Navigation;

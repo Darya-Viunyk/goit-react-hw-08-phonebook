@@ -1,11 +1,17 @@
-import { NavButton } from 'components/NavButton';
-
-export const HomePage = () => {
+import img from 'imeges/img.png';
+import { Header } from './homepage.styled';
+function HomePage() {
   return (
-    <div>
-      <p>Welcom to event page</p>
-      <p>Let `s start?</p>
-      <NavButton />
-    </div>
+    <>
+      <Header>Welcom to Phonebook</Header>
+      <img
+        src={img}
+        alt="phonebook"
+        width="300"
+        height="350"
+        style={{ margin: '0 auto' }}
+      />
+    </>
   );
-};
+}
+export default HomePage;

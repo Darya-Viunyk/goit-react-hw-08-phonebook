@@ -1,5 +1,5 @@
 import { nanoid } from 'nanoid';
-import { Label, NameLabel, Button } from './FormContacts.styled';
+import { Label, NameLabel, Button } from './formcontacts.styled';
 import { Formik, Form, Field } from 'formik';
 import styled from '@emotion/styled';
 import * as yup from 'yup';
@@ -28,7 +28,7 @@ const schema = yup.object().shape({
   number: yup.number().min(7).max(11).required(),
 });
 
-export const FormContacts = () => {
+function FormContacts() {
   const dispatch = useDispatch();
   const contacts = useSelector(contactsSelector);
 
@@ -79,4 +79,5 @@ export const FormContacts = () => {
       </Conteiner>
     </Formik>
   );
-};
+}
+export default FormContacts;

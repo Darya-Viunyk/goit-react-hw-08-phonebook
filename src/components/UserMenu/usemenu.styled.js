@@ -1,7 +1,6 @@
-import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 
-export const Item = styled(NavLink)`
+export const Button = styled.button`
   padding: 7px 30px;
   cursor: pointer;
   text-align: center;
@@ -9,6 +8,7 @@ export const Item = styled(NavLink)`
   border-radius: 5px;
   background-color: #a4a1a1;
   color: #ffffff;
+
   border: none;
   text-decoration: none;
   list-style: none;
@@ -21,18 +21,15 @@ export const Item = styled(NavLink)`
     background-color: #fff;
   }
 `;
-export const List = styled.div`
+export const Box = styled.div`
   display: flex;
   align-items: center;
   margin-left: auto;
   margin-right: auto;
   justify-content: center;
   gap: 20px;
-  /* background: #ffffff;
-  padding: 20px;
-  margin-top: 0;
-  list-style: none;
-  border: 2px solid #cdcece;
-  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14),
-    0 2px 1px -1px rgba(0, 0, 0, 0.12); */
+`;
+export const Text = styled.p`
+  color: rgb(46 147 8);
+  font-weight: bold;
 `;
