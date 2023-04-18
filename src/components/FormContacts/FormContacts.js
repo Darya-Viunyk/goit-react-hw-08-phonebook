@@ -5,7 +5,7 @@ import {
   Button,
   Conteiner,
   Inpyt,
-} from './formcontacts.styled';
+} from './FormContacts.styled';
 import { Formik } from 'formik';
 import * as yup from 'yup';
 import { useDispatch, useSelector } from 'react-redux';
