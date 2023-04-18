@@ -1,6 +1,7 @@
+import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 
-export const Button = styled.button`
+export const Button = styled(NavLink)`
   padding: 7px 30px;
   cursor: pointer;
   text-align: center;
@@ -20,6 +21,12 @@ export const Button = styled.button`
     font-weight: bold;
     background-color: #fff;
   }
+  &:hover,
+  &:focus {
+    color: #a4a1a1;
+    font-weight: bold;
+    background-color: #ffffff;
+  }
 `;
 export const Box = styled.div`
   display: flex;
@@ -32,4 +39,5 @@ export const Box = styled.div`
 export const Text = styled.p`
   color: rgb(46 147 8);
   font-weight: bold;
+  font-size: 30px;
 `;

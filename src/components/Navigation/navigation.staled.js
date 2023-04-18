@@ -20,6 +20,12 @@ export const Item = styled(NavLink)`
     font-weight: bold;
     background-color: #fff;
   }
+  &:hover,
+  &:focus {
+    color: #a4a1a1;
+    font-weight: bold;
+    background-color: #ffffff;
+  }
 `;
 export const List = styled.div`
   display: flex;
@@ -28,11 +34,4 @@ export const List = styled.div`
   margin-right: auto;
   justify-content: center;
   gap: 20px;
-  /* background: #ffffff;
-  padding: 20px;
-  margin-top: 0;
-  list-style: none;
-  border: 2px solid #cdcece;
-  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14),
-    0 2px 1px -1px rgba(0, 0, 0, 0.12); */
 `;

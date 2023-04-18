@@ -1,6 +1,7 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import { authOperations } from 'redux/auth/auth.operetions';
+import { Label, NameLabel, Button, Conteiner, Inpyt } from './loginpage.styled';
 
 function LoginPage() {
   const dispatch = useDispatch();
@@ -17,23 +18,24 @@ function LoginPage() {
 
   return (
     <>
-      <div>
+      <Conteiner>
         <form onSubmit={handleSubmit}>
           <div>
-            <label>
-              Email
-              <input type="text" name="email" />
-            </label>
+            <Label>
+              <NameLabel> Email</NameLabel>
+
+              <Inpyt type="text" name="email" />
+            </Label>
           </div>
           <div>
-            <label>
-              Password
-              <input type="password" name="password" />
-            </label>
+            <Label>
+              <NameLabel>Password</NameLabel>
+              <Inpyt type="password" name="password" />
+            </Label>
           </div>
-          <button type="submit">Submit</button>
+          <Button type="submit">Submit</Button>
         </form>
-      </div>
+      </Conteiner>
     </>
   );
 }

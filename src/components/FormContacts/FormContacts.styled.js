@@ -11,6 +11,7 @@ export const NameLabel = styled.h3`
   display: block;
   margin: 5px 0;
 `;
+
 export const Button = styled.button`
   padding: 5px 15px;
   cursor: pointer;
@@ -20,6 +21,12 @@ export const Button = styled.button`
   background-color: #a4a1a1;
   color: #ffffff;
   border: none;
+  &:hover,
+  &:focus {
+    color: #a4a1a1;
+    font-weight: bold;
+    background-color: #ffffff;
+  }
 `;
 export const Conteiner = styled(Form)`
   display: flex;

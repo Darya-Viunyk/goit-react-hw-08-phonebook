@@ -7,6 +7,7 @@ import React from 'react';
 import FormContacts from 'components/FormContacts/FormContacts';
 import Filter from 'components/Filter/Filter';
 import Contacts from 'components/Contacts/Contacts';
+import { Header, Conteiner } from './contactspage.styled';
 
 function ContactsPage() {
   const dispatch = useDispatch();
@@ -18,16 +19,18 @@ function ContactsPage() {
 
   return (
     <>
-      <div>
-        <h2>Phone Book </h2>
-        <FormContacts />
-      </div>
-      <div>
-        <h2>Contacts</h2>
-        <Filter />
-        {filteredContacts && <Contacts contacts={filteredContacts} />}
-      </div>
-      <Outlet />
+      <Conteiner>
+        <div>
+          <Header>Phone Book </Header>
+          <FormContacts />
+        </div>
+        <div>
+          <Header>Contacts</Header>
+          <Filter />
+          {filteredContacts && <Contacts contacts={filteredContacts} />}
+        </div>
+        <Outlet />
+      </Conteiner>
     </>
   );
 }

@@ -1,7 +1,13 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import { authOperations } from 'redux/auth/auth.operetions';
-
+import {
+  Label,
+  NameLabel,
+  Button,
+  Conteiner,
+  Inpyt,
+} from './registerpage.styled';
 export default function RegisterPage() {
   const dispatch = useDispatch();
 
@@ -17,28 +23,31 @@ export default function RegisterPage() {
   }
 
   return (
-    <>
+    <Conteiner>
       <form onSubmit={handleSubmit}>
         <div>
-          <label>
-            NickName
-            <input type="text" name="name" />
-          </label>
+          <Label>
+            <NameLabel>NickName</NameLabel>
+
+            <Inpyt type="text" name="name" />
+          </Label>
         </div>
         <div>
-          <label>
-            Email
-            <input type="text" name="email" />
-          </label>
+          <Label>
+            <NameLabel>Email</NameLabel>
+
+            <Inpyt type="text" name="email" />
+          </Label>
         </div>
         <div>
-          <label>
-            Password
-            <input type="password" name="password" />
-          </label>
+          <Label>
+            <NameLabel> Password</NameLabel>
+
+            <Inpyt type="password" name="password" />
+          </Label>
         </div>
-        <button type="submit">Submit</button>
+        <Button type="submit">Submit</Button>
       </form>
-    </>
+    </Conteiner>
   );
 }

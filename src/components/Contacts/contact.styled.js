@@ -8,6 +8,13 @@ export const Button = styled.button`
   background-color: #a4a1a1;
   color: #ffffff;
   border: none;
+
+  &:hover,
+  &:focus {
+    color: #a4a1a1;
+    font-weight: bold;
+    background-color: #ffffff;
+  }
 `;
 export const ItemLi = styled.li`
   display: flex;
