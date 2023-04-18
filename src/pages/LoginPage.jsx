@@ -1,12 +1,9 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import { authOperations } from 'redux/auth/auth.operetions';
-import { useState } from 'react';
-import Modal from './Modal';
 
 function LoginPage() {
   const dispatch = useDispatch();
-  const [isModalOpen, setIsModalOpen] = useState(false);
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -18,9 +15,6 @@ function LoginPage() {
     dispatch(authOperations.logIn(credential));
   }
 
-  const closeModal = () => {
-    setIsModalOpen(prevState => !prevState);
-  };
   return (
     <>
       <div>
@@ -39,7 +33,6 @@ function LoginPage() {
           </div>
           <button type="submit">Submit</button>
         </form>
-        {isModalOpen && <Modal onClose={closeModal}></Modal>}
       </div>
     </>
   );
